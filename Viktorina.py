@@ -39,6 +39,7 @@ def kuvan_valinta(okno, spisok):
 
     if len(spisok) == 50:
             you_win()
+            
     else:
         if Act in spisok:
             click_button()
@@ -138,11 +139,12 @@ def post_over(root, vas):
     
     
     knopka = Button(text="Game over :(", background="#555", foreground="#ccc",
-                 padx="30", pady="10", font="36", command=vyhod)
+                 padx="30", pady="10", font="36", command=vyhod_von)
     knopka_window = vas.create_window(150, 100, width=400, height=100, anchor=NW, window=knopka)
     knopka2 = Button(text="New game", background="#555", foreground="#ccc",
                  padx="30", pady="10", font="24", command=root.destroy)
     knopka2_window = vas.create_window(225, 300, width=250, height=50, anchor=NW, window=knopka2)
+    
     
     
 
@@ -162,15 +164,16 @@ def post_win(root, vas):
     
     
     knopka = Button(text="You win!", background="#fff5ee", foreground="#cd853f",
-                 padx="30", pady="10", font="36", command=vyhod)
+                 padx="30", pady="10", font="36", command=vyhod_von)
     knopka_window = vas.create_window(150, 100, width=400, height=100, anchor=NW, window=knopka)
     knopka2 = Button(text="New game", background="#555", foreground="#ccc",
                  padx="30", pady="10", font="24", command=root.destroy)
     knopka2_window = vas.create_window(225, 300, width=250, height=50, anchor=NW, window=knopka2)
     
-def vyhod():
+def vyhod_von():
     
     sl["a"] = 1
+    
 
 arvottu = []
 z = 0
@@ -192,8 +195,3 @@ while sl["a"] == 0:
         click_button()
     except UnboundLocalError:
        continue
-   
-
-    
-   
-
